@@ -1,43 +1,477 @@
-免责声明： 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>免责声明 | 文宇香香工作室</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #0a0e17;
+            color: #e0e0ff;
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(28, 58, 173, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 20%);
+            overflow-x: hidden;
+        }
+        
+        .tech-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+            background: 
+                linear-gradient(90deg, #0a0e17 1px, transparent 1px 10vmin),
+                linear-gradient(#0a0e17 1px, transparent 1px 10vmin);
+            background-size: 10vmin 10vmin;
+        }
+        
+        .floating-elements {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: float 20s infinite linear;
+        }
+        
+        .floating-element:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+            animation-duration: 25s;
+        }
+        
+        .floating-element:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 10%;
+            animation-duration: 20s;
+            animation-delay: -5s;
+            background: rgba(28, 58, 173, 0.1);
+        }
+        
+        .floating-element:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 20%;
+            animation-duration: 30s;
+            animation-delay: -10s;
+            background: rgba(139, 92, 246, 0.1);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, -20px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, -40px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-20px, -20px) rotate(270deg);
+            }
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #3b82f6, #8b5cf6, #06b6d4, transparent);
+            border-radius: 2px;
+        }
+        
+        .header p {
+            color: #a5b4fc;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .disclaimer-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .disclaimer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+        }
+        
+        .disclaimer-card h2 {
+            color: #60a5fa;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .disclaimer-card h2 i {
+            color: #8b5cf6;
+        }
+        
+        .disclaimer-content {
+            font-size: 1.05rem;
+        }
+        
+        .disclaimer-content p {
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+        
+        .disclaimer-content h3 {
+            color: #38bdf8;
+            margin: 30px 0 15px 0;
+            font-size: 1.4rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 12px;
+        }
+        
+        .disclaimer-content ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .disclaimer-content li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .disclaimer-content li::before {
+            content: '▸';
+            color: #8b5cf6;
+            position: absolute;
+            left: -15px;
+        }
+        
+        .disclaimer-content hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), transparent);
+            margin: 30px 0;
+        }
+        
+        .contact-info {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 4px solid #06b6d4;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #a5b4fc;
+        }
+        
+        .contact-info i {
+            color: #06b6d4;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(56, 189, 248, 0.1);
+            margin-top: 40px;
+        }
+        
+        .copyright {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            color: #a5b4fc;
+        }
+        
+        .copyright i {
+            color: #8b5cf6;
+        }
+        
+        .tech-border {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #3b82f6, #8b5cf6, #06b6d4, transparent);
+            margin: 30px 0;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .disclaimer-card {
+                padding: 25px;
+            }
+            
+            .disclaimer-card h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* 滚动动画 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="tech-bg"></div>
+    
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header fade-in">
+            <h1><i class="fas fa-shield-alt"></i> 免责声明</h1>
+            <p>文宇香香工作室 | 科技驱动创新</p>
+        </div>
+        
+        <div class="disclaimer-card fade-in">
+            <h2><i class="fas fa-exclamation-triangle"></i> 重要声明</h2>
+            <div class="disclaimer-content">
+                <p>本站下载内容仅供学习交流使用，不得用于商业用途。使用本站资源产生的一切后果由使用者自行承担，与本站无关。如需删除内容，请联系管理员。</p>
+                
+                <div class="tech-border"></div>
+                
+                <p>版权所有 (c) 2025 文宇香香/文宇香香工作室</p>
+                
+                <p>特此免费授予任何获得软件副本和相关文档文件的人不受限制地处置该软件的权利，包括不受限制地使用、复制、修改、合并、发布、分发、转授许可和/或出售该软件副本，以及再授权被配发了本软件的人如上的权利，须在下列条件下：</p>
+                
+                <p>上述版权声明和本许可声明应包含在该软件的所有副本或实质成分中。</p>
+                
+                <p>本软件是"如实"提供的，没有任何形式的明示或暗示的保证，包括但不限于对适销性、特定用途的适用性和不侵权的保证。在任何情况下，作者或版权持有人都不对任何索赔、损害或其他责任负责，无论这些追责来自合同、侵权或其它行为中，还是产生于、源于或有关于软件以及本软件的使用或其它处置。</p>
+            </div>
+        </div>
+        
+        <div class="disclaimer-card fade-in">
+            <h2><i class="fas fa-file-contract"></i> 最终用户许可协议</h2>
+            <div class="disclaimer-content">
+                <p>文宇香香及文宇香香工作室开发的所有软件 最终用户许可协议</p>
+                
+                <p>本软件许可协议是您与 文宇香香/文宇香香工作室 之间关于您使用 文宇香香及文宇香香工作室开发的所有软件 软件的协议。</p>
+                
+                <p>通过安装、复制或以其他方式使用本软件，您同意受本协议条款的约束。</p>
+                
+                <h3>1. 许可授权</h3>
+                <p>文宇香香/文宇香香工作室 授予您使用本软件的非独占许可。</p>
+                
+                <h3>2. 使用限制</h3>
+                <p>您不得：</p>
+                <ul>
+                    <li>对软件进行逆向工程、反编译或反汇编</li>
+                    <li>从软件中删除任何专有声明</li>
+                    <li>将软件用于非法目的</li>
+                </ul>
+                
+                <h3>3. 免责声明</h3>
+                <p>本软件按"现状"提供，不提供任何形式的保证。</p>
+                
+                <h3>4. 责任限制</h3>
+                <p>在任何情况下，文宇香香/文宇香香工作室 均不对因使用软件而产生的任何损害承担责任。</p>
+                
+                <h3>5. 终止</h3>
+                <p>本许可在终止前有效。此外，您可以通过销毁软件的所有副本来终止本许可。</p>
+                
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> 如有问题，请联系：文宇香香/文宇香香工作室</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer fade-in">
+            <div class="tech-border"></div>
+            <p>科技 · 创新 · 责任</p>
+            <div class="copyright">
+                <i class="far fa-copyright"></i>
+                <span>2025 文宇香香工作室</span>
+            </div>
+        </div>
+    </div>
 
-本站下载内容仅供学习交流使用，不得用于商业用途。 
-使用本站资源产生的一切后果由使用者自行承担，与本站无关。
-如需删除内容，请联系管理员。 
-
-版权所有 (c) 2025 文宇香香/文宇香香工作室
-
-特此免费授予任何获得软件副本和相关文档文件的人不受限制地处置该软件的权利，包括不受限制地使用、复制、修改、合并、发布、分发、转授许可和/或出售该软件副本，以及再授权被配发了本软件的人如上的权利，须在下列条件下：
-
-上述版权声明和本许可声明应包含在该软件的所有副本或实质成分中。
-
-本软件是"如实"提供的，没有任何形式的明示或暗示的保证，包括但不限于对适销性、特定用途的适用性和不侵权的保证。在任何情况下，作者或版权持有人都不对任何索赔、损害或其他责任负责，无论这些追责来自合同、侵权或其它行为中，还是产生于、源于或有关于软件以及本软件的使用或其它处置。
-
----
-
-文宇香香及文宇香香工作室开发的所有软件 最终用户许可协议
-
-本软件许可协议是您与 文宇香香/文宇香香工作室 之间关于您使用 文宇香香及文宇香香工作室开发的所有软件 软件的协议。
-
-通过安装、复制或以其他方式使用本软件，您同意受本协议条款的约束。
-
-1. 许可授权
-文宇香香/文宇香香工作室 授予您使用本软件的非独占许可。
-
-2. 使用限制
-您不得：
-- 对软件进行逆向工程、反编译或反汇编
-- 从软件中删除任何专有声明
-- 将软件用于非法目的
-
-3. 免责声明
-本软件按"现状"提供，不提供任何形式的保证。
-
-4. 责任限制
-在任何情况下，文宇香香/文宇香香工作室 均不对因使用软件而产生的任何损害承担责任。
-
-5. 终止
-本许可在终止前有效。此外，您可以通过销毁软件的所有副本来终止本许可。
-
-如有问题，请联系：文宇香香/文宇香香工作室
-
-© 2025 文宇香香工作室
+    <script>
+        // 滚动动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // 初始检查
+            fadeInOnScroll();
+            
+            // 滚动时检查
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // 添加一些动态效果到标题
+            const headerTitle = document.querySelector('.header h1');
+            const originalText = headerTitle.innerHTML;
+            
+            headerTitle.addEventListener('mouseenter', function() {
+                this.innerHTML = '<i class="fas fa-microchip"></i> 免责声明';
+            });
+            
+            headerTitle.addEventListener('mouseleave', function() {
+                this.innerHTML = originalText;
+            });
+        });
+        
+        // 添加动态背景线条
+        document.addEventListener('DOMContentLoaded', function() {
+            const bg = document.querySelector('.tech-bg');
+            
+            // 创建网格线动画
+            function createGridLines() {
+                const linesContainer = document.createElement('div');
+                linesContainer.style.position = 'fixed';
+                linesContainer.style.top = '0';
+                linesContainer.style.left = '0';
+                linesContainer.style.width = '100%';
+                linesContainer.style.height = '100%';
+                linesContainer.style.zIndex = '-1';
+                linesContainer.style.pointerEvents = 'none';
+                linesContainer.style.overflow = 'hidden';
+                
+                // 创建一些动态线条
+                for (let i = 0; i < 15; i++) {
+                    const line = document.createElement('div');
+                    line.style.position = 'absolute';
+                    line.style.width = Math.random() * 3 + 1 + 'px';
+                    line.style.height = Math.random() * 100 + 50 + 'px';
+                    line.style.backgroundColor = `rgba(${Math.random() * 100 + 56}, ${Math.random() * 100 + 100}, 248, ${Math.random() * 0.1 + 0.05})`;
+                    line.style.top = Math.random() * 100 + '%';
+                    line.style.left = Math.random() * 100 + '%';
+                    line.style.filter = 'blur(1px)';
+                    line.style.borderRadius = '2px';
+                    
+                    // 动画
+                    const duration = Math.random() * 30 + 20;
+                    const delay = Math.random() * 10;
+                    
+                    line.style.animation = `floatLine ${duration}s linear ${delay}s infinite`;
+                    
+                    linesContainer.appendChild(line);
+                }
+                
+                document.body.appendChild(linesContainer);
+                
+                // 添加动画关键帧
+                const styleSheet = document.createElement('style');
+                styleSheet.textContent = `
+                    @keyframes floatLine {
+                        0% {
+                            transform: translateY(0) rotate(${Math.random() * 360}deg);
+                            opacity: 0;
+                        }
+                        10% {
+                            opacity: ${Math.random() * 0.5 + 0.2};
+                        }
+                        90% {
+                            opacity: ${Math.random() * 0.5 + 0.2};
+                        }
+                        100% {
+                            transform: translateY(${Math.random() * 200 - 100}vh) rotate(${Math.random() * 720}deg);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(styleSheet);
+            }
+            
+            createGridLines();
+        });
+    </script>
+</body>
+</html>
